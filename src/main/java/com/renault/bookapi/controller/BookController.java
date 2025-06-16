@@ -2,6 +2,7 @@ package com.renault.bookapi.controller;
 
 import com.renault.bookapi.dto.BookDto;
 import com.renault.bookapi.dto.BookRequestDto;
+import com.renault.bookapi.dto.BookTitleDto;
 import com.renault.bookapi.service.BookService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,5 +50,15 @@ public class BookController {
     public ResponseEntity<List<String>> authorsByBookIds(
             @RequestParam List<Long> ids) {
         return ResponseEntity.ok(bookService.authorsByBookIds(ids));
+    }
+
+    @GetMapping("/rating")
+    public ResponseEntity<Double> rating(@RequestParam Long id) {
+        return ResponseEntity.ok(bookService.rating(id));
+    }
+
+    @GetMapping("/isbn/{isbn}")
+    public ResponseEntity<BookTitleDto> getByIsbn(@PathVariable String isbn) {
+        return ResponseEntity.ok(bookService.getByIsbn(isbn));
     }
 }
