@@ -32,7 +32,8 @@ class BookControllerTest {
                 new AuthorDto(1L,"Victor Hugo",80,120000));
         when(service.getById(1L)).thenReturn(dto);
 
-        mvc.perform(get("/api/books/1"))
+        mvc.perform(get("/api/books/1")
+                        .header("api-key", "aedz-151-ftyh-554"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
                 .andExpect(jsonPath("$.title").value("Les Misérables"));
@@ -46,6 +47,7 @@ class BookControllerTest {
                 .thenReturn(res);
 
         mvc.perform(post("/api/books")
+                        .header("api-key", "aedz-151-ftyh-554")
                         .contentType("application/json")
                         .content("""
                     {
@@ -61,7 +63,8 @@ class BookControllerTest {
 
     @Test
     void delete_noContent() throws Exception {
-        mvc.perform(delete("/api/books/1"))
+        mvc.perform(delete("/api/books/1")
+                        .header("api-key", "aedz-151-ftyh-554"))
                 .andExpect(status().isNoContent());
     }
 }
