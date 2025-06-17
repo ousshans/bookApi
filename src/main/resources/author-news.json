@@ -1,0 +1,22 @@
+[
+  {
+    "authorName": "Victor Hugo",
+    "news": "New exhibition on Victor Hugo’s manuscripts opens in Paris"
+  },
+  {
+    "authorName": "Gustave Flaubert",
+    "news": "A rare first edition of 'Madame Bovary' discovered in private collection"
+  },
+  {
+    "authorName": "Charles Baudelaire",
+    "news": "Baudelaire’s poetry set to music in a new concert series"
+  },
+  {
+    "authorName": "Émile Zola",
+    "news": "Restoration completed on Zola’s childhood home in Aix-en-Provence"
+  },
+  {
+    "authorName": "Marcel Proust",
+    "news": "Lost letter from Proust to his publisher goes up for auction"
+  }
+]
